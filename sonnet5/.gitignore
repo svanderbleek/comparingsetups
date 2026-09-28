@@ -1,0 +1,8 @@
+target/
+.cpcache/
+.shadow-cljs/
+node_modules/
+resources/public/js/
+.nrepl-port
+*.jar
+.DS_Store
