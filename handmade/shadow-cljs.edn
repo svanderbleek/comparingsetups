@@ -1,0 +1,6 @@
+{:deps {:aliases [:cljs]}
+ :dev-http {8080 "public"}
+ :builds
+ {:ccsdemo
+  {:target :browser
+   :modules {:main {:init-fn ccsdemo.core/init}}}}}

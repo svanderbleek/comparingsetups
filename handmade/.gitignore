@@ -1,0 +1,6 @@
+target/
+resources/
+node_modules/
+public/js/
+.shadow-cljs/
+.cpcache/

@@ -1,0 +1,16 @@
+{:paths ["src/clj"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.12.6"}
+        ring/ring-core {:mvn/version "1.15.5"}
+        ring/ring-jetty-adapter {:mvn/version "1.15.5"}}
+
+ :aliases {:cljs
+           {:paths ["src/cljs"]
+            :deps {thheller/shadow-cljs {:mvn/version "3.5.3"}}}
+           :run
+           {:main-opts ["-m" "ccsdemo.main"]}
+           :build
+           {:deps {io.github.clojure/tools.build {:mvn/version "0.10.14"}}
+            :extra-paths ["src/cljs" "resources"]
+            :extra-deps {thheller/shadow-cljs {:mvn/version "3.5.3"}}
+            :ns-default build}}}
