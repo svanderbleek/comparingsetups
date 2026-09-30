@@ -1,11 +1,14 @@
 (ns ccsdemo.main
-  (:require [ring.adapter.jetty :as jetty])
+  (:require [ring.adapter.jetty :refer [run-jetty]]
+            [ring.middleware.resource :refer [wrap-resource]]
+            [ring.util.response :refer [resource-response]])
   (:gen-class))
 
 (defn handler [request]
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hey"})
+  {:status 404 :headers {"Content-Type" "text/plain"} :body "Not found"})
 
-(defn -main [& _]
-  (jetty/run-jetty #'handler {:port 3000 :join? true}))
+(def app
+  (wrap-resource handler "public"))
+
+(defn -main []
+  (run-jetty app {:port 3001 :join? true}))

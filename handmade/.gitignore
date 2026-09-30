@@ -1,6 +1,5 @@
 target/
-resources/
+resources/public/js
 node_modules/
-public/js/
 .shadow-cljs/
 .cpcache/
