@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ccsdemo-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ccsdemo-app
+  template:
+    metadata:
+      labels:
+        app: ccsdemo-app
+    spec:
+      containers:
+      - name: ccsdemo-app-container
+        image: us-central1-docker.pkg.dev/ccsdemo-510302/ccsdemo/app:v1
+        ports:
+        - containerPort: 3001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ccsdemo-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ccsdemo-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
