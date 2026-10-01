@@ -17,7 +17,7 @@
 (rf/reg-event-fx
   :load
   (fn [{:keys [db]} _]
-    {:fetch {:url "http://localhost:3001/"}
+    {:fetch {:url "/api"}
      :db (assoc db :display "loading...")}))
 
 (rf/reg-event-db

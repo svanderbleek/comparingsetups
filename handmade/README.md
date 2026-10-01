@@ -16,8 +16,11 @@ go to `localhost:3001/index.html`
 ### Prod
 
 ```
-clj -T:build uber
-docker buildx build --platform linux/amd64 -t us-central1-docker.pkg.dev/ccsdemo-510302/ccsdemo/app:v1 .
+clj -T:build uber 
+# Can test with java -jar target/name.jar
+docker buildx build --platform linux/amd64 -t us-central1-docker.pkg.dev/ccsdemo-510302/ccsdemo/app:version .
+# update version in deployment.yaml
+docker push us-central1-docker.pkg.dev/ccsdemo-510302/ccsdemo/app:version
 kubectl apply -f deployment.yaml
 kubectl get service ccsdemo-app-service
 ```
