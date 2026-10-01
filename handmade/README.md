@@ -4,14 +4,16 @@ Demo project to develop proficiency with Clojure/ClojureScript
 
 ## Run
 
-For development
+### Dev
 
 ```
-clj -M:run                # backend
+clj -M:run                # start backend first
 shadow-cljs watch ccsdemo # frontend
 ```
 
-For production
+go to `localhost:3001/index.html`
+
+### Prod
 
 ```
 clj -T:build uber         # build
@@ -19,9 +21,8 @@ clj -T:build uber         # build
 
 ## Todo
 
-* use re-frame in client
-* Connect client to server
 * Connect server to Postgres
+* Display data in client
 * Dockerize
 * Kubernetes
 
