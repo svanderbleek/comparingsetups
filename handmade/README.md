@@ -27,9 +27,10 @@ kubectl get service ccsdemo-app-service
 
 go to `http://EXTERNAL-IP/index.html`
 
+[running](http://35.239.99.168/index.html) on GCP
+
 ## Todo
 
-* Fix hardcoded fetch url
 * Enable https
 * Connect server to Postgres
 * Display data in client
